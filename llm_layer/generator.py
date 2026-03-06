@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 logger = logging.getLogger(__name__)
 
+
 genai.configure(api_key=os.getenv("GEMINI_API_KEY", "dummy_key"))
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 
