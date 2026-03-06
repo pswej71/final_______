@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend-ml:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - LLM_PROMPT_VERSION=2
+    volumes:
+      - .:/app
+    depends_on:
+      - ml-model-service
+      - llm-service
+
+  ml-model-service:
+    build: .
+    command: python -c "print('Dedicated ML Pipeline service starting...')" 
+    restart: on-failure
+
+  llm-service:
+    build: .
+    command: python -c "print('Dedicated LLM generation/RAG agent service starting...')"
+
+  frontend-dashboard:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    depends_on:
+      - backend-ml
