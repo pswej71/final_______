@@ -1,3 +1,8 @@
+# Project-specific ignored files
+node_modules/
+tracked_files_raw.txt
+non_ignored_files.txt
+
 # Python-specific
 __pycache__/
 *.py[cod]
@@ -22,29 +27,11 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# Environment variables
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
 # Logs
 *.log
-
-# Databases
-*.db
-*.sqlite
 
 # IDEs and editors
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Project specific
-node_modules/
-tracked_files_raw.txt
-non_ignored_files.txt
