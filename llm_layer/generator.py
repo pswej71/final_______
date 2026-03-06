@@ -27,6 +27,7 @@ def generate_explanation(risk_score, shap_features, telemetry_summary):
         prompt = f"""
         You are an expert Solar Plant AI diagnostician. Analyze the following inverter risk prediction and generate a clear, concise natural language explanation for plant operators.
 
+
         Input Data:
         - Overall Risk Score: {risk_score} (0-1 scale)
         - Telemetry Summary: {telemetry_summary}

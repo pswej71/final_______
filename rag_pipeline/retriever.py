@@ -18,7 +18,8 @@ class RAGRetriever:
             context.append("Inverter 14: Block B. Telemetry: efficiency=0.82, voltage imbalance=high. Risk score: 0.82 (Shutdown Risk). Status: Active warning.")
             context.append("Inverter 12: Block B. Risk score: 0.45 (Degradation Risk).")
             context.append("Inverter 18: Block B. Risk score: 0.50 (Degradation Risk).")
-        
+         
+         
         return " | ".join(context) if context else "None"
 
     def ask_question(self, query: str) -> str:

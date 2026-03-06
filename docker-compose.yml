@@ -14,6 +14,7 @@ services:
       - ml-model-service
       - llm-service
 
+
   ml-model-service:
     build: .
     command: python -c "print('Dedicated ML Pipeline service starting...')" 

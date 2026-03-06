@@ -13,6 +13,7 @@ A complete full-stack solution for monitoring solar inverter telemetry, featurin
 
 ## 🚀 Getting Started Locally
 
+
 ### 1. Setup Backend
 1. Open a terminal in the `backend/` folder.
 2. Create and activate a virtual environment:

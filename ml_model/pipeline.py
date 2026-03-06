@@ -9,7 +9,8 @@ import json
 import logging
 
 logger = logging.getLogger(__name__)
-
+ 
+ 
 class SolarPredictor:
     def __init__(self):
         self.risk_model = xgb.XGBClassifier(
